@@ -45,13 +45,12 @@ const resolvers = {
         
         saveBook: async (parent, { input }, context) => {
             if (context.user) {
-                const updatedUser = await User.findByIdAndUpdate(
+                const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $addToSet: { savedBooks: input } },
                     { new: true, runValidators: true }
                 );
-                    console.log(input);
-                    
+                                        
                 return updatedUser;
                 
             }
@@ -64,7 +63,9 @@ const resolvers = {
                     {_id:context.user._id},
                     {$pull: {savedBooks: {bookId: bookId}}},
                     {new: true}
-                )
+                );
+
+                return updatedUser;
             }
 
             throw new AuthenticationError('Please log in to remove this book')

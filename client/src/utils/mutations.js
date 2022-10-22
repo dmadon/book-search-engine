@@ -40,11 +40,11 @@ export const SAVE_BOOK = gql`
                 image
             }
         }
-    }
+    } 
 `;
 
 export const REMOVE_BOOK = gql`
-    mutation removeBook($bookId: String){
+    mutation removeBook($bookId: String!){
         removeBook(bookId:$bookId){            
             _id
             username
