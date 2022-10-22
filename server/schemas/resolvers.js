@@ -43,17 +43,20 @@ const resolvers = {
             return {token,user};
         },
         
-        saveBook: async (parent, {input}, context)  => {
-            if(context.user) {
-                const updatedUser = await User.findOneAndUpdate(
-                    {_id:context.user._id},
-                    {$addToSet:{ savedBooks: input}},
-                    {new: true, runValidators: true}
+        saveBook: async (parent, { input }, context) => {
+            if (context.user) {
+                const updatedUser = await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { savedBooks: input } },
+                    { new: true, runValidators: true }
                 );
+                    console.log(input);
+                    
                 return updatedUser;
+                
             }
 
-            throw new AuthenticationError('Please log in to save this book')
+            throw new AuthenticationError('Please log in to save this book');
         },
         removeBook: async (parent, {bookId}, context) => {
             if(context.user) {

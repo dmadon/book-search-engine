@@ -2,7 +2,7 @@ const {gql} = require('apollo-server-express');
 
 const typeDefs = gql`
 type Book {
-    bookId: ID
+    bookId: String
     authors: [String]
     description: String        
     image: String
@@ -29,7 +29,7 @@ input SaveBookInput {
     image: String
     link: String
     title: String
-    bookId:ID
+    bookId:String
 }
 
 type Query {
