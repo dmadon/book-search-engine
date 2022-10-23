@@ -22,17 +22,17 @@
 
   ## Technologies Used
 
-    * MongoDB and Mongoose ODM
-    * Express
-    * React
-    * Node
-    * GraphQL and Apollo Server
+  * MongoDB and Mongoose ODM
+  * Express
+  * React
+  * Node
+  * GraphQL and Apollo Server
 
   ## Links
 
-    * [View the deployed application](https://book-search-engine-module-21.herokuapp.com/)
+  * [View the deployed application](https://book-search-engine-module-21.herokuapp.com/)
 
-    * [View the GitHub repository](https://github.com/dmadon/book-search-engine)
+  * [View the GitHub repository](https://github.com/dmadon/book-search-engine)
 
   ## Preview
 
